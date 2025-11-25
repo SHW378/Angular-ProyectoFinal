@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "app-invitation": {
+    "app-inventario": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -69,10 +69,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "app-invitation:build:production"
+              "buildTarget": "app-inventario:build:production"
             },
             "development": {
-              "buildTarget": "app-invitation:build:development"
+              "buildTarget": "app-inventario:build:development"
             }
           },
           "defaultConfiguration": "development"

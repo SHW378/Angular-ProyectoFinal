@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { InventoryService } from '../../services/inventory';
-// CORRECCIÓN: Ruta al archivo correcto
 import { Producto } from '../../model/inventario.model';
 
 @Component({

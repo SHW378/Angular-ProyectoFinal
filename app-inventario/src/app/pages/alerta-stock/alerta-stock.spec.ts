@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AlertaStock } from './alerta-stock';
+import { AlertaStockComponent } from './alerta-stock';
 
-describe('AlertaStock', () => {
-  let component: AlertaStock;
-  let fixture: ComponentFixture<AlertaStock>;
-
+describe('AlertaStockComponent', () => {
+  let component: AlertaStockComponent;
+  let fixture: ComponentFixture<AlertaStockComponent>;
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AlertaStock]
+      imports: [AlertaStockComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AlertaStock);
+    fixture = TestBed.createComponent(AlertaStockComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

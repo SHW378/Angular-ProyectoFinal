@@ -1,12 +1,14 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterLink } from '@angular/router';
 import { InventoryService } from '../../services/inventory';
+import { AlertaStockComponent } from '../../pages/alerta-stock/alerta-stock';
 
 @Component({
   selector: 'app-inicio',
   standalone: true,
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule, HttpClientModule, RouterLink, AlertaStockComponent],
   templateUrl: './inicio.html',
   styleUrl: './inicio.scss'
 })
@@ -20,11 +22,13 @@ export class Inicio implements OnInit {
   ngOnInit() {
     this.inventoryService.obtenerDashboard().subscribe({
       next: (data) => {
-        this.totalProductos.set(data.resumen.total_productos);
-        this.valorInventario.set(data.resumen.valor_total || 0);
-        this.alertasStock.set(data.alertas);
+        if (data) {
+          this.totalProductos.set(data.resumen.total_productos || 0);
+          this.valorInventario.set(data.resumen.valor_total || 0);
+          this.alertasStock.set(data.alertas || []);
+        }
       },
-      error: (err) => console.error('Error cargando dashboard:', err)
+      error: (err) => console.error('Error dashboard:', err)
     });
   }
 }

@@ -5,7 +5,7 @@ import { FormularioProducto } from './pages/formulario-producto/formulario-produ
 import { DetalleProducto } from './pages/detalle-producto/detalle-producto';
 import { RegistroMovimiento } from './pages/registro-movimiento/registro-movimiento';
 import { HistorialMovimientos } from './pages/historial-movimientos/historial-movimientos';
-import { StockAlertComponent } from './pages/alerta-stock/alerta-stock';
+import { AlertaStockComponent } from './pages/alerta-stock/alerta-stock';
 
 export const routes: Routes = [
   { path: '', component: Inicio },
@@ -15,7 +15,7 @@ export const routes: Routes = [
   { path: 'detalle-producto', component: DetalleProducto },
   { path: 'movimientos', component: HistorialMovimientos },
   { path: 'movimientos/nuevo', component: RegistroMovimiento },
-  { path: 'alertas', component: StockAlertComponent },
+  { path: 'alertas', component: AlertaStockComponent },
 
   { path: '**', redirectTo: '' }
 ];
