@@ -1,4 +1,4 @@
-Diagrama Entidad-Relacion de la Base de Datos
+Diagrama Entidad-Relacion de la Base de Datos<br>
 •	Categorías → Productos: Relación uno a muchos (1:N). Una categoría agrupa varios productos 
 •	Productos → Movimientos: Relación uno a muchos (1:N). Un producto puede tener múltiples registros de movimientos de inventario
  
