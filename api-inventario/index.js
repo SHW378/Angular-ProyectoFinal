@@ -7,7 +7,7 @@ const PORT = 3000;
 app.use(cors());
 app.use(express.json());
 
-// --- NUEVO: ENDPOINT CATEGORIAS ---
+// --- ENDPOINT CATEGORIAS ---
 app.get('/api/categorias', (req, res) => {
     connection.query('SELECT * FROM categorias ORDER BY nombre ASC', (err, results) => {
         if (err) return res.status(500).json({ error: err.message });
@@ -15,7 +15,7 @@ app.get('/api/categorias', (req, res) => {
     });
 });
 
-// --- PRODUCTOS (Actualizado con JOIN) ---
+// --- PRODUCTOS ---
 app.get('/api/productos', (req, res) => {
     // Hacemos JOIN para obtener el NOMBRE de la categoría, no solo el ID
     const sql = `
@@ -46,7 +46,6 @@ app.get('/api/productos/:id', (req, res) => {
 });
 
 app.post('/api/productos', (req, res) => {
-    // Ahora recibimos categoria_id en lugar de un string
     const { sku, nombre, categoria_id, precio, stock } = req.body;
     const sql = 'INSERT INTO productos (sku, nombre, categoria_id, precio, stock) VALUES (?, ?, ?, ?, ?)';
     connection.query(sql, [sku, nombre, categoria_id, precio, stock], (err, result) => {
