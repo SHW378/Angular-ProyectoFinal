@@ -20,7 +20,6 @@ export class FormularioProducto implements OnInit {
   idProducto: number | null = null;
   listaCategorias = this.inventoryService.categorias;
 
-  // Inicializamos el formulario con los campos necesarios
   form: any = {
     sku: '',
     nombre: '',

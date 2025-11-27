@@ -17,7 +17,7 @@
     <div class="row-group">
       <div class="input-group">
         <label>Categoría</label>
-        <!-- El select ahora usa la lista dinámica de la base de datos -->
+        <!-- El select usa la lista dinámica de la base de datos -->
         <select [value]="form.categoria_id" (change)="updateField($event, 'categoria_id')" required>
           <option value="">Seleccionar...</option>
           <option *ngFor="let cat of listaCategorias()" [value]="cat.id">

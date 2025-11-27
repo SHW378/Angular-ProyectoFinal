@@ -5,11 +5,11 @@ import { InventoryService } from '../../services/inventory';
 import { Producto } from '../../model/inventario.model';
 
 @Component({
-  selector: 'app-alerta-stock', // Selector corregido
+  selector: 'app-alerta-stock',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './alerta-stock.html', // Archivo corregido
-  styleUrls: ['./alerta-stock.scss']     // Archivo corregido
+  templateUrl: './alerta-stock.html',
+  styleUrls: ['./alerta-stock.scss']
 })
 export class AlertaStockComponent implements OnInit, OnChanges {
   private router = inject(Router);
