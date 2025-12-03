@@ -6,14 +6,11 @@ import { tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class InventoryService {
-  // Inyección de dependencias moderna
+  // Inyección de dependencias
   private http = inject(HttpClient);
 
-  // URL base de tu API (ajusta el puerto si tu backend corre en otro)
   private apiUrl = 'http://localhost:3000/api';
 
-
-  // Almacenamos los datos aquí para no tener que recargarlos siempre
   productos = signal<any[]>([]);
   categorias = signal<any[]>([]);
 
